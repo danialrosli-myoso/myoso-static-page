@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYOSO EMPIRE | Coming Soon — Premium Matcha Powder</title>
+    <meta name="description"
+        content="Something extraordinary is brewing. MYOSO EMPIRE — Premium Japanese matcha from Uji, Kyoto. Coming soon.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* --- ROOT VARIABLES (from myoso-website) --- */
+        :root {
+            --primary: #FFD700;
+            --primary-dark: #e6c200;
+            --primary-light: #ffe44d;
+            --accent: #4169E1;
+            --accent-light: #6b8de8;
+            --bg: #161c44;
+            --bg-light: #1e2654;
+            --bg-warm: #232b5c;
+            --text: #ffffff;
+            --text-light: #d0d0d0;
+            --text-muted: #a0a0a0;
+            --white: #ffffff;
+            --card-bg: #1e2654;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Helvetica Neue', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION (from myoso-website) --- */
+        nav {
+            background: rgba(22, 28, 68, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--white);
+            letter-spacing: 1px;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+        }
+
+        .logo span {
+            color: var(--white);
+        }
+
+        .nav-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 215, 0, 0.12);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-status .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        /* --- HERO / COMING SOON SECTION --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0d1233 0%, #161c44 50%, #1e2654 100%);
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        /* Animated background pattern */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: 50px 50px;
+        }
+
+        /* Glowing orbs */
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(65, 105, 225, 0.08) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            border-radius: 50%;
+            animation: orbFloat 10s ease-in-out infinite;
+        }
+
+        .orb-secondary {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.06) 0%, transparent 70%);
+            bottom: -150px;
+            left: -150px;
+            border-radius: 50%;
+            animation: orbFloat 12s ease-in-out infinite reverse;
+        }
+
+        @keyframes orbFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+        }
+
+        /* Floating decorative elements (from myoso-website) */
+        .hero-decor {
+            position: absolute;
+            font-size: 4rem;
+            opacity: 0.12;
+            animation: float 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .hero-decor-1 {
+            top: 15%;
+            left: 8%;
+            animation-delay: 0s;
+        }
+
+        .hero-decor-2 {
+            top: 25%;
+            right: 12%;
+            animation-delay: 2s;
+            font-size: 3rem;
+        }
+
+        .hero-decor-3 {
+            bottom: 20%;
+            left: 18%;
+            animation-delay: 4s;
+            font-size: 3.5rem;
+        }
+
+        .hero-decor-4 {
+            bottom: 30%;
+            right: 8%;
+            animation-delay: 1s;
+            font-size: 2.5rem;
+        }
+
+        .hero-decor-5 {
+            top: 60%;
+            left: 5%;
+            animation-delay: 3s;
+            font-size: 2rem;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(0.85);
+            }
+        }
+
+        /* --- HERO CONTENT --- */
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        /* Badge (from myoso-website hero) */
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 8px 24px;
+            border-radius: 50px;
+            color: #b8d4b0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: #6bd66b;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        /* Main heading */
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            color: var(--white);
+            margin-bottom: 0.75rem;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .gradient-text {
+            display: block;
+            background: linear-gradient(135deg, var(--primary), #ffe44d, var(--primary));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        .hero .subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            max-width: 550px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+
+
+
+
+        /* --- FEATURES PREVIEW (from myoso-website) --- */
+        .features-preview {
+            padding: 5rem 5%;
+            background: var(--bg-warm);
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.15);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.75rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(255, 215, 0, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(65, 105, 225, 0.2), rgba(65, 105, 225, 0.1));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.93rem;
+            line-height: 1.7;
+        }
+
+        /* --- FOOTER (from myoso-website) --- */
+        footer {
+            background: #0d1233;
+            color: var(--white);
+            padding: 3rem 5% 1.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+        }
+
+        .footer-brand .logo {
+            color: var(--white);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            color: var(--white);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 0.85rem;
+        }
+
+
+
+        /* --- SCROLL INDICATOR --- */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            animation: bounce 2.5s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        .scroll-indicator span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .scroll-mouse {
+            width: 24px;
+            height: 38px;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .scroll-mouse::before {
+            content: '';
+            width: 4px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 2px;
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollWheel 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollWheel {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                opacity: 0.3;
+                transform: translateX(-50%) translateY(12px);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(-8px);
+            }
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-status {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        /* --- PAGE LOAD ANIMATION --- */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .fade-up:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .fade-up:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .fade-up:nth-child(3) {
+            animation-delay: 0.35s;
+        }
+
+        .fade-up:nth-child(4) {
+            animation-delay: 0.5s;
+        }
+
+        .fade-up:nth-child(5) {
+            animation-delay: 0.65s;
+        }
+
+        .fade-up:nth-child(6) {
+            animation-delay: 0.8s;
+        }
+
+        .fade-up:nth-child(7) {
+            animation-delay: 0.95s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Intersection Observer reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#" class="logo">
+            <img src="Official Logo (Transparent).png" alt="MYOSO EMPIRE Logo">
+            <span>MYOSO EMPIRE</span>
+        </a>
+        <div class="nav-status">
+            <span class="pulse-dot"></span>
+            Coming Soon
+        </div>
+    </nav>
+
+    <!-- HERO / COMING SOON -->
+    <section class="hero" id="home">
+        <span class="hero-decor hero-decor-1">🍃</span>
+        <span class="hero-decor hero-decor-2">🌿</span>
+        <span class="hero-decor hero-decor-3">🍂</span>
+        <span class="hero-decor hero-decor-4">🍵</span>
+        <span class="hero-decor hero-decor-5">✨</span>
+        <div class="orb-secondary"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge fade-up">
+                <span class="dot"></span>
+                Premium Japanese Matcha
+            </div>
+
+            <h1 class="fade-up">
+                Something Extraordinary
+                <span class="gradient-text">Is Brewing</span>
+            </h1>
+
+            <p class="subtitle fade-up">
+                We're crafting the digital experience for MYOSO EMPIRE.
+                Premium grade matcha from Longjing Tea Garden in Hangzhou, China,
+                features over 1,200 years of history, renowned for producing top-tier,
+                hand-picked Longjing green tea with a sweet, chestnut aroma
+                soon at your fingertips.
+            </p>
+
+
+        </div>
+
+        <!-- Scroll indicator -->
+        <a href="#preview" class="scroll-indicator">
+            <div class="scroll-mouse"></div>
+            <span>Scroll</span>
+        </a>
+    </section>
+
+    <!-- FEATURES PREVIEW (from myoso-website) -->
+    <section class="features-preview" id="preview">
+        <div class="section-header reveal">
+            <span class="section-badge">What's Coming</span>
+            <h2 class="section-title">The Empire Within</h2>
+            <p class="section-subtitle">A glimpse of the experience we're building for you — rooted in tradition,
+                crafted for today.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <div class="feature-icon">🏔️</div>
+                <h3>Premium Harvest</h3>
+                <p>Sourced directly from the lush Tea Garden in Hangzhou, China, our leaves are harvested at the peak of
+                    freshness for a robust, everyday, and pure consistent flavor.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🌱</div>
+                <h3>Nutrient Dense</h3>
+                <p>Our green tea powder is packed with essential antioxidants and phytonutrients — a simple way to boost
+                    your daily wellness routine.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">⚡</div>
+                <h3>Versatile Powder</h3>
+                <p>Ultra-fine, consistent powder that dissolves effortlessly. Perfect for smooth lattes, smoothies, or
+                    adding a vibrant boost to baked goods.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">✨</div>
+                <h3>Sealed for Freshness</h3>
+                <p>Packed immediately after processing to lock in vibrant color and active nutrients. Rich aroma and
+                    bold
+                    taste preserved until you open the seal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (same structure as myoso-website) -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <span
+                        style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--white); display: block; letter-spacing: 1px;">MYOSO
+                        EMPIRE</span>
+                </a>
+                <p>Premium Japanese matcha from Longjing Tea Garden, Hangzhou, China. Bringing authentic tea culture to
+                    Malaysia since 2025.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Wholesale</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:hello@myoso.com">hello@myosoempire.com</a></li>
+                    <li><a href="#">Bangi, Malaysia</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MYOSO EMPIRE. All rights reserved. | Premium Matcha from Uji, Kyoto</p>
+        </div>
+    </footer>
+
+
+
+    <script>
+
+
+        // === INTERSECTION OBSERVER for scroll reveal ===
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
